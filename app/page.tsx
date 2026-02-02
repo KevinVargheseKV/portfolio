@@ -11,46 +11,35 @@ export default function Home() {
   return (
     <>
       {/* ================= HERO ================= */}
-      <main className="min-h-screen relative overflow-hidden flex items-center justify-center px-6 bg-gradient-to-br from-black via-zinc-900 to-black">
-
-        {/* STAR / PARTICLE DOTS */}
-        <div className="absolute inset-0 bg-[radial-gradient(white_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.06]" />
-
-        {/* GLOW BLOBS */}
-        <div className="absolute top-1/4 left-1/4 w-[520px] h-[520px] bg-indigo-500/10 blur-[160px] rounded-full" />
-        <div className="absolute bottom-1/4 right-1/4 w-[420px] h-[420px] bg-cyan-400/10 blur-[140px] rounded-full" />
-
-        {/* FLOATING TECH LINE */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: -20 }}
-          transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute top-20 right-20 w-40 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent"
-        />
-
-        <div className="relative max-w-5xl w-full grid md:grid-cols-2 gap-20 items-center">
+      <main className="min-h-screen bg-black flex items-center justify-center px-6">
+        <div className="max-w-5xl w-full grid md:grid-cols-2 gap-16 items-center">
 
           {/* LEFT: TEXT */}
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
-            className="text-center md:text-left"
-          >
-            <h1 className="text-4xl md:text-6xl font-semibold text-white tracking-tight">
+          <div className="text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl font-semibold text-white">
               Kevin Varghese
             </h1>
 
-            <p className="mt-4 text-lg md:text-xl text-gray-400">
-              AI & ML Engineer • LLMs • Robotics
-            </p>
+            {/* MOVING TEXT */}
+            <motion.p
+              className="mt-3 text-lg md:text-xl text-gray-400 overflow-hidden whitespace-nowrap"
+              initial={{ x: 0 }}
+              animate={{ x: [-10, 10, -10] }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              AI & ML Engineer · LLMs · Robotics · Developer
+            </motion.p>
 
-            {/* SOCIAL ICONS */}
-            <div className="mt-8 flex gap-6 justify-center md:justify-start">
+            {/* SOCIALS */}
+            <div className="mt-5 flex gap-5 justify-center md:justify-start">
               <a
                 href="https://github.com/KevinVargheseKV"
                 target="_blank"
-                className="text-white text-2xl hover:text-indigo-400 transition"
+                className="text-white text-2xl hover:text-gray-400"
               >
                 <FaGithub />
               </a>
@@ -58,32 +47,58 @@ export default function Home() {
               <a
                 href="https://www.linkedin.com/in/kevin-varghese-063967340/"
                 target="_blank"
-                className="text-white text-2xl hover:text-cyan-400 transition"
+                className="text-white text-2xl hover:text-gray-400"
               >
                 <FaLinkedin />
               </a>
             </div>
-          </motion.div>
+          </div>
 
           {/* RIGHT: PHOTO */}
           <motion.div
-            initial={{ scale: 1.1 }}
+            initial={{ scale: 1.05 }}
             animate={{ scale: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            className="relative w-[280px] md:w-[340px] h-[400px] md:h-[480px] mx-auto"
+            transition={{ duration: 1 }}
+            className="relative w-[260px] md:w-[320px] h-[380px] md:h-[460px] mx-auto"
           >
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-indigo-500/20 to-cyan-400/20 blur-xl" />
             <Image
-              src="/kevin-1.jpg"
+              src="/kevin.jpg"
               alt="Kevin Varghese"
               fill
               priority
-              className="object-cover rounded-xl relative"
+              className="object-cover rounded-xl"
             />
           </motion.div>
-
         </div>
       </main>
+
+      {/* ================= ABOUT / SUMMARY ================= */}
+      <section className="bg-black text-white px-6 py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto text-center"
+        >
+          <h2 className="text-2xl md:text-3xl font-semibold mb-6">
+            About Me
+          </h2>
+
+          <p className="text-gray-400 text-lg leading-relaxed">
+            I am an AI & Machine Learning Engineering student with a strong
+            interest in building intelligent, real-world systems. My work
+            focuses on areas such as Large Language Models, Retrieval-Augmented
+            Generation, and applied machine learning.
+            <br /><br />
+            I enjoy transforming complex ideas into practical solutions,
+            particularly in domains like healthcare, sustainability, and
+            automation. I actively work on AI-ML projects, explore
+            emerging AI technologies, and contribute to technical communities
+            through IEEE and robotics initiatives.
+          </p>
+        </motion.div>
+      </section>
 
       {/* ================= PROJECTS ================= */}
       <Projects />
