@@ -31,7 +31,7 @@ export default function Home() {
                 ease: "easeInOut",
               }}
             >
-              AI & ML Engineer · LLMs · Robotics · Developer
+              AI & ML Engineer · LLMs · Robotics 
             </motion.p>
 
             {/* SOCIALS */}
