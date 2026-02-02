@@ -62,7 +62,7 @@ export default function Home() {
             className="relative w-[260px] md:w-[320px] h-[380px] md:h-[460px] mx-auto"
           >
             <Image
-              src="/kevin.jpg"
+              src="/kevin-1.jpg"
               alt="Kevin Varghese"
               fill
               priority
