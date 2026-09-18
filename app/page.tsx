@@ -196,7 +196,7 @@ export default function Home() {
       <section ref={heroRef} className="hero">
         <div className="hero-grid-lines" aria-hidden="true" />
         <div className="hero-copy">
-          <div className="hero-eyebrow">AI &amp; MACHINE LEARNING ENGINEER</div>
+          <div className="hero-eyebrow">AI &amp; MACHINE LEARNING ENGINEER  </div>
           <h1><span>KEVIN</span><span className="red">VARGHESE</span></h1>
           <p className="hero-statement">Turning ideas into systems at the intersection of <strong>AI, robotics &amp; real-world applications.</strong></p>
         </div>
